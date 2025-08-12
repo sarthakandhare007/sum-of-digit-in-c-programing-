@@ -1,22 +1,17 @@
-#include <stdio.h>
+void main()
+{
+int s=0,x,y,r;
 
-int main() {
-    int num, sum = 0, digit;
+printf("Enter a Number:");
+scanf("%d",&x);
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
+while(x!=0)
+{
+r=x%10;
+s=s+r;
+x=x/10;
 
-    // Handle negative numbers
-    if (num < 0) {
-        num = -num;
-    }
+}
+printf("Sum of digits is %d",s);
 
-    while (num > 0) {
-        digit = num % 10;   // Get last digit
-        sum += digit;       // Add to sum
-        num /= 10;          // Remove last digit
-    }
-
-    printf("Sum of digits: %d\n", sum);
-    return 0;
 }
